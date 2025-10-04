@@ -1,0 +1,224 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0b1a; /* deep dark background */
+    color: #e0e0f0; /* light text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #1a103d, #24105f); /* purple-blue gradient */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #a78bfa; /* neon purple */
+    transition: opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #a78bfa,
+                 0 0 10px #7c3aed,
+                 0 0 20px #6d28d9,
+                 0 0 40px rgba(124, 58, 237, 0.6);
+}
+
+.navbar-brand:hover {
+    opacity: 1;
+    color: #c084fc; /* brighter purple */
+    text-shadow: 0 0 10px #c084fc,
+                 0 0 20px #8b5cf6,
+                 0 0 40px #7c3aed,
+                 0 0 80px rgba(167, 139, 250, 0.9);
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin: 0 0.25rem;
+    color: #e0e0f0;
+}
+
+.nav-link:hover {
+    background-color: rgba(167, 139, 250, 0.2); /* light purple hover */
+    color: #c084fc;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: rgba(167, 139, 250, 0.3); /* active tab color */
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-link i {
+    margin-right: 0.25rem;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    color: #fff;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: 2px solid rgba(167, 139, 250, 0.6);
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(20, 15, 40, 0.9);
+        border-radius: 8px;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-link {
+        margin: 0.25rem 0;
+    }
+    
+    .navbar-nav {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem !important;
+    }
+}
+
+/* General Card Styling */
+.card {
+    background: #1c1633;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+    color: #f5f3ff;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+/* Table */
+.table th {
+    background-color: #241a3e;
+    color: #c084fc;
+}
+
+/* Buttons */
+.btn-action {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    background: linear-gradient(90deg, #6d28d9, #7c3aed);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.btn-action:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+/* Chart Canvas */
+canvas {
+    max-height: 300px;
+    background: #0d0b1a;
+}
+
+/* Card Headings */
+.card-body h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #a78bfa;
+}
+
+.card-body h6 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+}
+
+/* Total Expenses Card */
+.card-body.total-expenses {
+    background-color: rgba(167, 139, 250, 0.2); /* light purple background */
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.card-body.total-expenses h6,
+.card-body.total-expenses h3 {
+    color: #d7d1e2; /* dark purple text */
+}
+
+/* Total Entries Card */
+.card-body.total-entries {
+    background-color: rgba(167, 139, 250, 0.2); /* light purple background */
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.card-body.total-entries h6,
+.card-body.total-entries h3 {
+    color: #d7d1e2; /* dark purple text */
+}
+/* Modal Background and Text */
+.modal-content {
+  background-color: #1c1633 !important;
+  color: #e0e0f0 !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* Modal Header */
+.modal-header {
+  background-color: #24105f !important;
+  color: #a78bfa !important;
+  border-bottom: 1px solid #2e2a4f;
+}
+
+/* Modal Footer */
+.modal-footer {
+  background-color: #1a103d !important;
+  border-top: 1px solid #2e2a4f;
+}
+
+/* Form Inputs */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  background-color: #0d0b1a !important;
+  color: #e0e0f0 !important;
+  border: 1px solid #4c3c7d !important;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+  color: #a0a0b0;
+}
+
+/* Submit Button */
+.modal-content .btn-primary {
+  background: linear-gradient(90deg, #6d28d9, #7c3aed) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.modal-content .btn-primary:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa) !important;
+}

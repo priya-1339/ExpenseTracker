@@ -1,0 +1,8 @@
+CREATE TABLE expense (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    amount FLOAT NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    description VARCHAR(200),
+    date DATE NOT NULL,
+    created_at DATETIME
+);
