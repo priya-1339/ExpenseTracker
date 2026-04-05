@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
 
@@ -16,8 +16,8 @@ class Expense(db.Model):
     amount = db.Column(db.Float, nullable=False)
     category = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(200))
-    date = db.Column(db.Date, nullable=False, default=datetime.utcnow)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    date = db.Column(db.Date, nullable=False, default=lambda: datetime.now(timezone.utc).date())
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
     def to_dict(self):
         return {
@@ -71,12 +71,12 @@ def add_expense():
 
 @app.route('/expenses/<int:id>', methods=['GET'])
 def get_expense(id):
-    expense = Expense.query.get_or_404(id)
+    expense = db.get_or_404(Expense, id)
     return jsonify(expense.to_dict())
 
 @app.route('/expenses/<int:id>', methods=['PUT'])
 def update_expense(id):
-    expense = Expense.query.get_or_404(id)
+    expense = db.get_or_404(Expense, id)
     data = request.json
     
     expense.amount = float(data['amount'])
@@ -89,7 +89,7 @@ def update_expense(id):
 
 @app.route('/expenses/<int:id>', methods=['DELETE'])
 def delete_expense(id):
-    expense = Expense.query.get_or_404(id)
+    expense = db.get_or_404(Expense, id)
     db.session.delete(expense)
     db.session.commit()
     return '', 204
