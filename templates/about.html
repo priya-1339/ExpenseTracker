@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header mb-4">
+    <h2><i class="bi bi-info-circle"></i> About</h2>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Personal Expense Tracker</h5>
+        <p class="card-text">
+            Track your daily expenses easily with this simple and intuitive expense tracker.
+            Manage your spending across different categories, view visual summaries, and gain
+            insights into your financial habits.
+        </p>
+        <h6 class="mt-4">Features:</h6>
+        <ul>
+            <li>Add, edit, and delete expenses</li>
+            <li>Categorize expenses for better organization</li>
+            <li>Filter expenses by category and date range</li>
+            <li>Visual charts showing spending patterns</li>
+            <li>Mobile-responsive design for on-the-go tracking</li>
+            <li>Install as an app on your phone (PWA)</li>
+        </ul>
+        <p class="text-muted mt-3">
+            <i class="bi bi-info-circle"></i> Built with Flask, SQLite, and Bootstrap for a fast and reliable experience.
+        </p>
+    </div>
+</div>
+{% endblock %}
